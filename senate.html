@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Senate</title>
+</head>
+<body class="container" onload="msjAviso();">
+    <header class="d-flex justify-content-between align-items-center flex-column flex-lg-row">
+        <div class="d-flex align-items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+        <h1 class="text-danger">Data Insight Group</h1>
+      </div>            
+        <div><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+        </svg><a href="mailto:info@DatainsightGroup.net" class="btn text-primary">info@DatainsightGroup.net</a></div>
+    </header>    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-2">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Congress 113</a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item text-white" href="./house.html">House</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Senate</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Attendance</a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown1">
+                  <li><a class="dropdown-item text-white" href="./houseAttendance.html">House</a></li>
+                  <li><a class="dropdown-item text-white" href="./senateAttendance.html">Senate</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Party Loyalty</a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown2">
+                  <li><a class="dropdown-item text-white" href="./housepartyLoyalty.html">House</a></li>
+                  <li><a class="dropdown-item text-white" href="./senatePartyLoyalty.html">Senate</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <main>
+        <section class="mt-4">
+            <h2>Senators</h2>
+            <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+        </section>
+        <section>
+          <fieldset class="pb-3 col-6">
+            <label class="mb-3 h5" for="state">Select a State</label>
+            <select class="form-select" id="state" aria-label="Default select example">
+              <option class="selector" selected value="All">All</option>
+        
+            </select>
+          </fieldset>
+          <h5>Filter by political party</h5>
+          <fieldset class="d-flex flex-column  flex-sm-row gap-5 m-4">
+          <div class="form-check">
+            <input class="form-check-input party" type="checkbox" value="D" id="Democrat" name="Democrat" >
+            <label class="form-check-label" for="Democrat">
+              Democrat
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input party" type="checkbox" value="R" id="Republican" name="Republican" >
+            <label class="form-check-label" for="Republican">
+              Republican
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input party" type="checkbox" value="ID" id="Independent" name="Independent" >
+            <label class="form-check-label" for="Independent">
+              Independent
+            </label>
+          </div>
+        </fieldset>
+        </section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Party</th>
+                    <th>State</th>
+                    <th>Seniority</th>
+                    <th>Percentage of Votes With Party</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </main>
+    <footer class="d-flex justify-content-center align-items-center bg-dark p-4">
+        <p class="text-white m-0">&copy;2021 Data Insight Group | All Rights Reserved</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
