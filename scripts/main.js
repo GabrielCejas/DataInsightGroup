@@ -1,36 +1,35 @@
-
-let paginaActual = document.querySelector("title") ? "senate" : "house";
-let endPoint = `https://api.propublica.org/congress/v1/113/${paginaActual}/members.json`
+let paginaActual = document.querySelector("#senate") ? "senate" : "house";
+let endPoint = `https://api.propublica.org/congress/v1/113/${paginaActual}/members.json`;
 
 let init = {
   method: "GET",
   headers: {
-    "X-API-Key":"npXc5aP6rSKvX4l1kLL4YalMFgYVUk1f6oQAYjpo"
-  }
-}
+    "X-API-Key": "npXc5aP6rSKvX4l1kLL4YalMFgYVUk1f6oQAYjpo",
+  },
+};
 
 fetch(endPoint, init)
-  .then(res => res.json())
-  .then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     let datas = data.results[0].members;
-    dataApi(datas)
+    dataApi(datas);
   })
-  .catch(err => console.error(err.message))
+  .catch((err) => console.error(err.message));
 
-function dataApi(data) { 
+function dataApi(data) {
   checkbox.forEach((party) => {
     party.addEventListener("change", () => {
       let checked = seleccion(checkbox);
-      if (checked.length) { 
-        filtrarTable(filtrarPorPartido(data, checked))
-        return resultado = filtrarPorPartido(data, checked)
+      if (checked.length) {
+        filtrarTable(filtrarPorPartido(data, checked));
+        return (resultado = filtrarPorPartido(data, checked));
       } else {
         msjAviso();
       }
     });
   });
   imprimirEstados(filtrarEstados(data));
- }
+}
 
 const tBody = document.querySelector(".table tbody");
 
@@ -80,19 +79,19 @@ function imprimirEstados(state) {
   });
 }
 /******* filtros por estdo junto con partidos **********/
-select.addEventListener('change', (event) => {
-  filtrarState(resultado, event.target.value)
+select.addEventListener("change", (event) => {
+  filtrarState(resultado, event.target.value);
 });
 
 /* filtrar estados */
 let estadosSeleccionados;
 function filtrarState(array, select) {
-   if (select !== "All") {
+  if (select !== "All") {
     estadosSeleccionados = array.filter((estado) => estado.state == select);
   } else {
     estadosSeleccionados = array;
   }
-  filtrarTable(estadosSeleccionados); // envia el filtrado final 
+  filtrarTable(estadosSeleccionados); // envia el filtrado final
 }
 
 /* Seleccion de los checkbox del HTML */
@@ -113,9 +112,9 @@ function filtrarPorPartido(miembros, array) {
 
 /*****Cambiar texto del boton*****/
 
-function readMore(){
-  boton = document.getElementById("button")
-  boton.innerHTML === "Read Less" ? boton.innerHTML = "Read More" : boton.innerHTML = "Read Less";
-}  
-
-
+function readMore() {
+  boton = document.getElementById("button");
+  boton.innerHTML === "Read Less"
+    ? (boton.innerHTML = "Read More")
+    : (boton.innerHTML = "Read Less");
+}
